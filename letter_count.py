@@ -1,4 +1,4 @@
-"""Count the letters used by Shakespeare."""
+"""Count the letters used by a .txt file"""
 
 from typing import Dict, List
 from matplotlib import pyplot
@@ -6,7 +6,8 @@ from matplotlib import pyplot
 
 def main() -> None:
     """Entrypoint to our program"""
-    letter_counts = read_character_data("data/shakespeare.txt")
+    path: str = input("Please input the path of your file")
+    letter_counts = read_character_data(path)
     chart_data(letter_counts)
 
 
@@ -27,8 +28,8 @@ def read_character_data(file: str) -> Dict[str, int]:
 
 
 def chart_data(letter_counts: Dict[str, int]) -> None:
-    """Plot the results of our textual analysis of Shakespeare"""
-    pyplot.title("Counts of Letters in Shakespeare")
+    """Plot the results of our textual analysis"""
+    pyplot.title("Counts of Letters")
     pyplot.xlabel("Letters")
     pyplot.ylabel("Count")
     labels: List[str] = list(letter_counts.keys())

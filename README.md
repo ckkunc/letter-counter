@@ -1,4 +1,5 @@
 # This program counts the letters of a txt file
+Make sure the txt.file is in the same folder as the location of the program.
 
-Just input the path of your txt.file when the program prompts you to.
-Requires matplotlib
+## Requirements
+Requires matplotlib.

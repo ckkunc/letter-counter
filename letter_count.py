@@ -2,13 +2,23 @@
 
 from typing import Dict, List
 from matplotlib import pyplot
+import os
 
 
 def main() -> None:
     """Entrypoint to our program"""
-    path: str = input("Please input the path of your file")
-    letter_counts = read_character_data(path)
-    chart_data(letter_counts)
+    path: str = input("Please input the path of your file: ")
+    if os.path.exists(path):
+        letter_counts = read_character_data(path)
+        chart_data(letter_counts)
+    else: 
+        print("Please input the file location correctly")
+        print(path)
+        choice: str = input("Type 'yes' to retry, 'no' to quit: ")
+        if choice == True:
+                main()
+        else: 
+                quit()
 
 
 def read_character_data(file: str) -> Dict[str, int]: 
